@@ -70,9 +70,13 @@
               </div>
               <div class="mb-3">
                 <label for="loginPassword" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="loginPassword"
-                  placeholder="Ingresa tu contraseña" minlength="6" required />
-                <div class="invalid-feedback">La contraseña debe tener al menos 6 caracteres.</div>
+                <div class="input-group has-validation">
+                  <input type="password" class="form-control" id="loginPassword"
+                    placeholder="Ingresa tu contraseña" minlength="6" required />
+                  <button class="btn btn-outline-secondary" type="button" id="togglePassword"
+                    aria-label="Mostrar u ocultar contraseña">Mostrar</button>
+                  <div class="invalid-feedback">La contraseña debe tener al menos 6 caracteres.</div>
+                </div>
               </div>
               <button type="submit" class="btn btn-brand w-100 py-2">Ingresar</button>
             </form>
