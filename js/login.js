@@ -19,6 +19,17 @@
       alertBox.className = 'alert d-none';
     }
 
+    // Botón para mostrar u ocultar la contraseña.
+    const togglePassword = document.getElementById('togglePassword');
+    const passwordInput = document.getElementById('loginPassword');
+    if (togglePassword && passwordInput) {
+      togglePassword.addEventListener('click', () => {
+        const oculto = passwordInput.type === 'password';
+        passwordInput.type = oculto ? 'text' : 'password';
+        togglePassword.textContent = oculto ? 'Ocultar' : 'Mostrar';
+      });
+    }
+
     const loginForm = document.getElementById('loginForm');
     loginForm.addEventListener('submit', (e) => {
       e.preventDefault();
