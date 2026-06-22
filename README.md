@@ -1,60 +1,64 @@
 # Alke Wallet
 
-Billetera digital desarrollada como proyecto del Módulo 2 (Fundamentos del desarrollo Front-end).
+Alke Wallet es una billetera digital que hice como proyecto del Módulo 2 del bootcamp (Front-end). La idea era simular la app de una fintech: entrar con tu cuenta, ver el saldo, depositar y retirar plata, enviarle dinero a un contacto y revisar tus movimientos.
 
-La app permite iniciar sesión, ver el saldo, hacer depósitos, enviar dinero a contactos y revisar el historial de movimientos. Es un proyecto solo de front-end: no hay servidor, los datos se guardan en el `localStorage` del navegador.
+Está hecho todo en el front, sin servidor detrás. Los datos se guardan en el `localStorage` del navegador, así que se prueba abriendo la página y listo, sin instalar nada. Dejé una cuenta de prueba para revisarlo al tiro:
 
-## Tecnologías
+- **Correo:** demo@alkewallet.com
+- **Contraseña:** alkemy123
 
-- HTML5 y CSS3
-- JavaScript
-- Bootstrap 5 (vía CDN)
-- jQuery 3 (vía CDN)
+También puedes crear una cuenta nueva desde la pestaña "Crear cuenta" del login.
 
-Como Bootstrap y jQuery se cargan desde un CDN, no hay que instalar nada: basta con abrir la página.
+## Qué hace
 
-## Cómo correrlo
+- Login y registro de usuarios.
+- Saldo a la vista, con totales de ingresos y egresos.
+- Depósitos y retiros de fondos.
+- Envío de dinero a contactos, con un buscador que autocompleta mientras escribes.
+- Historial de movimientos con filtros (todos / ingresos / egresos).
 
-Lo más simple es abrir `index.html` en el navegador.
+## Cómo está armado
 
-Si prefieres usar un servidor local (recomendado para que el `localStorage` funcione bien), desde la carpeta del proyecto:
+HTML, CSS y JavaScript, con Bootstrap para que se vea bien tanto en celular como en escritorio, y jQuery para lo interactivo (las animaciones, el autocompletar y actualizar el saldo después de cada operación). Para no terminar con un desorden, dejé toda la lógica de datos en un solo archivo (`store.js`) y separé el resto del código por pantalla.
+
+Bootstrap y jQuery se cargan desde un CDN, así que no hay que instalar nada.
+
+## Cómo probarlo
+
+Lo más simple es abrir `index.html` en el navegador. Si prefieres un servidor local (mejor para que el `localStorage` se comporte bien), desde la carpeta del proyecto:
 
 ```bash
 python3 -m http.server 8000
 ```
 
-Y entrar a http://localhost:8000.
+Y entras a http://localhost:8000.
 
-## Cuenta de prueba
-
-La primera vez que se abre la app se crea un usuario de ejemplo:
-
-- Correo: `demo@alkewallet.com`
-- Contraseña: `alkemy123`
-
-También se puede crear una cuenta nueva desde la pestaña "Crear cuenta" del login.
-
-> Para reiniciar los datos, borra el localStorage del sitio desde las herramientas del navegador (Application → Local Storage).
+> Para volver a los datos de ejemplo, borra el `localStorage` del sitio desde las herramientas del navegador (Application → Local Storage).
 
 ## Páginas
 
-- `index.html` – página de bienvenida
+- `index.html` – bienvenida
 - `login.html` – inicio de sesión y registro
 - `menu.html` – panel con el saldo y accesos rápidos
 - `deposit.html` – depósito de fondos
+- `withdraw.html` – retiro de fondos
 - `sendmoney.html` – envío de dinero y agenda de contactos
 - `transactions.html` – historial de movimientos
 
-El resto del código está en `css/` (estilos) y `js/`. En `js/` la lógica de datos vive en `store.js` (todo lo de localStorage) y cada pantalla tiene su propio archivo.
+Los estilos están en `css/` y la lógica en `js/` (un archivo por pantalla, más `store.js` para los datos).
 
-## Flujo de trabajo en Git
+## Cómo trabajé con Git
 
-Para el control de versiones se trabajó con una rama por funcionalidad y se integró a `main` mediante Pull Requests:
+Usé una rama por funcionalidad y las fui integrando a `main` con merges y un Pull Request:
 
 - `main` – versión estable
 - `feature/login` – inicio de sesión
-- `feature/depositos` – depósitos y saldo
+- `feature/depositos` – depósitos, retiros y saldo
 - `feature/transacciones` – envío de dinero e historial
+
+## Lo que aprendí
+
+Fue de los primeros proyectos donde tuve que pensar en cómo se conectan varias pantallas entre sí, mantener la sesión del usuario y reutilizar código en vez de andar copiando y pegando. Lo siguiente sería conectarlo a un backend de verdad para que los datos no vivan solo en el navegador.
 
 ---
 
