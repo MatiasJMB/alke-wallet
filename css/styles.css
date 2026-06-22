@@ -1,0 +1,275 @@
+/* Estilos propios de Alke Wallet. Bootstrap pone la base; aquí va la marca. */
+
+:root {
+  --ink: #0f2238;
+  --primary: #2456d6;
+  --primary-hover: #1d49b8;
+  --up: #15803d;
+  --down: #b42318;
+
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --text: #16202c;
+  --muted: #66758a;
+  --border: #e7e9ee;
+
+  --radius: 12px;
+  --shadow: 0 1px 2px rgba(16, 32, 56, 0.05), 0 1px 3px rgba(16, 32, 56, 0.04);
+
+  --font-base: 'Segoe UI', system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-base);
+  color: var(--text);
+  background-color: var(--bg);
+  line-height: 1.55;
+}
+
+main {
+  min-height: calc(100vh - 64px);
+}
+
+a {
+  color: var(--primary);
+}
+
+h1, h2, h3 {
+  letter-spacing: -0.01em;
+}
+
+.text-money {
+  color: var(--up);
+}
+
+/* Paneles oscuros (navbar, hero, tarjeta de saldo): color plano, sin gradiente. */
+.panel-dark {
+  background: var(--ink);
+  color: #fff;
+}
+
+.brand-logo {
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.brand-logo .brand-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.btn-brand {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+  font-weight: 500;
+}
+
+.btn-brand:hover,
+.btn-brand:focus {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+  color: #fff;
+}
+
+.card-soft {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* Navbar plana sobre fondo ink. */
+.navbar.panel-dark {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navbar.panel-dark .brand-mark {
+  background: #fff;
+  color: var(--ink);
+}
+
+.navbar .nav-link {
+  font-weight: 400;
+}
+
+/* Cajita de ícono reutilizable (SVG de línea). */
+.icon-box {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #eef2fb;
+  color: var(--primary);
+}
+
+/* Avatar con la inicial del contacto. */
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #eef1f5;
+  color: var(--ink);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+/* Login: dos columnas en escritorio, una sola en móvil. */
+.auth-wrapper {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+}
+
+.auth-aside {
+  padding: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth-aside h1 {
+  font-size: 2.1rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.auth-aside .feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 0;
+}
+
+.auth-aside .feature-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.9rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.auth-form-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 410px;
+  box-shadow: none;
+}
+
+.demo-hint {
+  font-size: 0.85rem;
+  background: #f1f4f9;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  color: var(--muted);
+}
+
+/* Tarjeta de saldo. */
+.balance-card {
+  border-radius: var(--radius);
+  padding: 1.75rem;
+}
+
+.balance-card .balance-amount {
+  font-size: 2.4rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* Accesos rápidos. */
+.quick-action {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1.1rem 1.25rem;
+  text-decoration: none;
+  color: var(--text);
+  height: 100%;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.quick-action:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* Montos. */
+.amount-in {
+  color: var(--up);
+  font-weight: 600;
+}
+
+.amount-out {
+  color: var(--down);
+  font-weight: 600;
+}
+
+/* Etiqueta de tipo en el historial. */
+.tx-type {
+  font-weight: 500;
+}
+
+.contact-item {
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.contact-item:hover {
+  background: #f4f6fa;
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--muted);
+  padding: 3rem 1rem;
+}
+
+/* Tabla de movimientos. */
+.table > :not(caption) > * > * {
+  padding: 0.85rem 0.75rem;
+}
+
+thead th {
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+@media (max-width: 768px) {
+  .auth-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-aside {
+    display: none;
+  }
+
+  .balance-card .balance-amount {
+    font-size: 2rem;
+  }
+}

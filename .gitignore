@@ -1,0 +1,14 @@
+# Archivos de sistema operativo
+.DS_Store
+Thumbs.db
+
+# Configuración de editores / IDE
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+
+# Dependencias (no se usan en este proyecto, pero se ignoran por prevención)
+node_modules/
